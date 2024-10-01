@@ -74,7 +74,7 @@ class SERSDatav3(Dataset):
         return [pest_label1,pest_concen, norm_pest_intensity_tensor,stacked_tensors,conv_pest_int]   
 
 
-test = glob.glob("/home/aghktb/AI-SERS/SERSFormer2.0/TestData/**/**/**/**/*.*", recursive=False)
+test = glob.glob("./TestData/**/**/**/**/*.*", recursive=False)
 print("Number of Test pest samples => ", len(test))
 class SERSDatav3test(Dataset):
     def __init__(self, root, transform=None, target_transform=None):
