@@ -1,6 +1,6 @@
 """
 author: Akshata 
-timestamp: Sat July 28 2023 08:10 PM
+timestamp: July 28 2024 08:10 PM
 """
 
 import os
@@ -40,7 +40,7 @@ ACCELERATOR = 'gpu'
 EPOCHS = 4
 ATT_HEAD = 4
 ENCODE_LAYERS = 4
-DATASET_DIR = "/home/aghktb/AI-SERS/SERSFormer2.0"
+DATASET_DIR = "./"
 from Metric import MultiLabelUnifiedMetric
 label_dict = {'No_pest_present':0,'carbophenothion':1,'coumaphos':2,'oxamyl':3,'phosmet':4,'thiabenzadole':5}
 Num_classes = len(label_dict)
@@ -159,50 +159,7 @@ class SERSClassifyRegress(pl.LightningModule):
 
             #reg_preds = torch.cat([x[f'preds_reg'] for x in dataset_outputs])
             #reg_targets = torch.cat([x[f'targets_reg'] for x in dataset_outputs])
-            '''
-            for i in range(self.test_reg_pred.shape[1]):
-                reg_preds = self.test_step_reg_pred[:, i]
-                reg_targets = self.test_step_reg_tar[:, i]
-            
-                data = [[x, y] for (x, y) in zip(reg_targets, reg_preds)]
-                reg_preds_np = reg_preds.squeeze().numpy()
-                reg_targets_np = reg_targets.squeeze().numpy()
-
-                df = DataFrame({'True': reg_targets_np, 'Pred': reg_preds_np})
-
-                    # Scatter plot
-                # Calculate the point density
-                xy = torch.vstack([reg_targets.T,reg_preds.T]).cpu().detach().numpy()
-
-                z = gaussian_kde(xy.squeeze())(xy.squeeze())
-                # Sort the points by density, so that the densest points are plotted last
-                idx = z.argsort()
-                x, y, z = reg_targets[idx], reg_preds[idx], z[idx]
-                fig1, ax = plt.subplots(figsize=(12, 6))
-                plt.scatter(x,y,c=z,s=100)
-                wandb.log({f"Concentration Predictions" :wandb.Image(fig1)})
-                # Get unique target values
-                unique_targets = df['True'].unique()
-                unique_targets = sorted(unique_targets)
-                print(unique_targets)
-                # Set up subplots
-                num_targets = len(unique_targets)
-                fig2, axes = plt.subplots(nrows=1, ncols=num_targets, figsize=(15, 5),sharey=True)
-
-                # Create violin plots for each target value
-                for i, target_value in enumerate(unique_targets):
-                    target_df = df[df['True'] == target_value]
-                    sns.violinplot(x='True', y='Pred', data=target_df, inner="sticks", color="lightgreen",cut=0 ,ax=axes[i])
-
-                    axes[i].set_title(f'Target = {target_value}')
-
-                plt.tight_layout()
-                plt.xlabel("True Concentration")
-                plt.ylabel("Predicted Concentration")
-                plt.title("True and Predicted Concentration")
-                plt.tight_layout()
-                wandb.log({f"Kernel Density Estimation of Concentrations" :wandb.Image(fig2)})
-            '''
+           
             return super().test_epoch_end(outputs)
     def predict_step(self,batch, batch_idx):
         batch_data = batch[2:]
