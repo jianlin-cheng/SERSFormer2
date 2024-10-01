@@ -1,6 +1,6 @@
 # SERSFormer-2.0 : A Machine Learning Approach for Rapid Detection of Pesticides by SERS Coupled with Transformers
 
-![SERSFormer](./blockdiag.png?raw=true "SERSFormer Architecture Diagram")
+![SERSFormer2](./blockdiag2_0.png?raw=true "SERSFormer2.0 Architecture Diagram")
 
 The SERSFormer, is a multi-tasking weight sharing transformer based model, designed for identifying and quantifying the pesticide residue present on the foodsample. It takes SERS spectrum of food sample as input and performs two tasks- classification and regression simultaneously. The above block diagram shows the multi-tasking architecture of SERSFormer. 
 
@@ -13,18 +13,18 @@ To use this repository, clone the repository to required folder on your system u
 set up conda environement and install necessary packages using the setup.sh script.
 
 ```
-cd SERSFormer
+cd SERSFormer2
 ./setup.sh 
 ```
 To train the model, validate and test, run the following command:
 ```
 python SERSFormer_Training.py \
 --attn_head 4 \
---encoder_layers 6\
+--encoder_layers 4\
 --save_dir SERSFormer_log\
 --entity_name YourWandbUserName 
 ```
-SERSFormer uses Wandb for logging all the metrics and training parameters. Provide wandb login username in the arguement to monitor training in realtime. It can be customized to log any media, text, images, graphs, gradients, and metrics. For more information on setting up wandb, please visit the documentation https://docs.wandb.ai/guides/integrations/lightning
+SERSFormer2 uses Wandb for logging all the metrics and training parameters. Provide wandb login username in the arguement to monitor training in realtime. It can be customized to log any media, text, images, graphs, gradients, and metrics. For more information on setting up wandb, please visit the documentation https://docs.wandb.ai/guides/integrations/lightning
 
 **Cite Us**
 
