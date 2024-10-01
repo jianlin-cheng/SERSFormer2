@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from scipy.stats import gaussian_kde
 from itertools import combinations
 from sklearn.metrics import multilabel_confusion_matrix
-DATASET_DIR = "/home/aghktb/AI-SERS/SERSFormer2.0"
+DATASET_DIR = "./"
 label_dict = {'No Pesticide':0,'carbophenothion':1,'coumaphos':2,'oxamyl':3,'phosmet':4,'thiabenzadole':5}
 Num_classes = len(label_dict)
 reversed_dict = {value: key for key, value in label_dict.items()} 
