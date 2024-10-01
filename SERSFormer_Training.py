@@ -1,6 +1,6 @@
 """
 author: Akshata 
-timestamp: Sat July 28 2023 08:10 PM
+timestamp: Tue Oct 01 2024 12:10 PM
 """
 
 import os
@@ -41,7 +41,7 @@ ACCELERATOR = 'gpu'
 EPOCHS = 20
 ATT_HEAD = 4
 ENCODE_LAYERS = 4
-DATASET_DIR = "/home/aghktb/AI-SERS/SERSFormer2.0"
+DATASET_DIR = "./"
 
 label_dict = {'No_pest_present':0,'carbophenothion':1,'coumaphos':2,'oxamyl':3,'phosmet':4,'thiabenzadole':5}
 Num_classes = len(label_dict)
@@ -327,7 +327,7 @@ def train_pesticide_classifier():
                         help="effective_batch_size = batch_size * num_gpus * num_nodes")
     parser.add_argument('--num_dataloader_workers', type=int, default=DATALOADERS)
     
-    parser.add_argument('--project_name', type=str, default='SERSFormer',
+    parser.add_argument('--project_name', type=str, default='SERSFormer2_0',
                         help="Weights and Biases project name")
     parser.add_argument('--save_dir', type=str, default=CHECKPOINT_PATH, help="Directory in which to save models")
 
