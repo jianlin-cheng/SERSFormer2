@@ -7,12 +7,12 @@ import numpy as np
 from pandas import read_csv
 import re
 import scipy.signal as signal
-DATASET_DIR = "/home/aghktb/AI-SERS/SERSFormer2.0"
+DATASET_DIR = "./"
 print(DATASET_DIR)
 label_dict = {'No_pest_present':0,'carbophenothion':1,'coumaphos':2,'oxamyl':3,'phosmet':4,'thiabendazole':5}
 Num_classes = len(label_dict)
 
-train = glob.glob("/home/aghktb/AI-SERS/SERSFormer2.0/Spinach_Strawbery/**/**/**/**/*.*", recursive=False)
+train = glob.glob("./Spinach_Strawbery/**/**/**/**/*.*", recursive=False)
 
 
 print("Number of Train pest samples => ", len(train))
