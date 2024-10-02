@@ -29,7 +29,5 @@ SERSFormer2 uses Wandb for logging all the metrics and training parameters. Prov
 
 If this repository is useful, please cite us.
 
-Hajikhani, M., Hegde, A., Snyder, J., Cheng, J., & Lin, M. (2024). Integrating transformer-based machine learning with SERS technology for the analysis of hazardous pesticides in spinach. Journal of Hazardous Materials, 134208. https://doi.org/10.1016/j.jhazmat.2024.134208
-
-
+Hegde, A., Hajikhani, M., Snyder, J., Cheng, J., & Lin, M. (2024). Leveraging SERS and transformer models for simultaneous detection of multiple pesticides in fresh produce.
 
