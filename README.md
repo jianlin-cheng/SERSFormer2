@@ -1,8 +1,7 @@
-# SERSFormer-2.0 : A Machine Learning Approach for Rapid Detection of Pesticides by SERS Coupled with Transformers
-
+# SERSFormer-2.0 : Leveraging SERS and transformer models for simultaneous detection of multiple pesticides in fresh produce
 ![SERSFormer2](./blockdiag2_0.png?raw=true "SERSFormer2.0 Architecture Diagram")
 
-The SERSFormer, is a multi-tasking weight sharing transformer based model, designed for identifying and quantifying the pesticide residue present on the foodsample. It takes SERS spectrum of food sample as input and performs two tasks- classification and regression simultaneously. The above block diagram shows the multi-tasking architecture of SERSFormer. 
+The SERSFormer-2.0, is a multi-tasking weight sharing transformer based model, designed for identifying and quantifying the pesticide residue present on the foodsample. It takes SERS spectrum of food sample as input and performs two tasks- classification and regression simultaneously. The above block diagram shows the multi-tasking architecture of SERSFormer. 
 
 The repository contains the SERS dataspectra for 5 different pesticides that are commonly found on spinach, thiabendazole, phosmet, coumaphos, carbophenothion and oxamyl respectiveely and a control sam[le without any pesticides. Each pesticide contains, 5 different concentration ranges from 0 tp 10 ppm.]
 
